@@ -1,8 +1,8 @@
 import { Modal, Button, Row, Col } from 'react-bootstrap'
 import { useState } from 'react'
-import AddComment from './AddComment'
+import EditComment from './EditComment'
 
-const ModalTemplate = (props)=> {
+const PutModal = (props)=> {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -11,36 +11,26 @@ const ModalTemplate = (props)=> {
     return (
       <>
         <Button variant="primary" id="modalBtn" onClick={handleShow}>
-          Add Comments
+          Edit Comments
         </Button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{props['bookName']}</Modal.Title>
+              Edit Comment 
           </Modal.Header>
        
           <Row className="justify-content-center text-center mt-3">
           <Col xs={12} md={6}>
-           <img className="img-fluid" style={{height:'250px'}} src={props['image']} alt={props['bookName']}/>
+             <img className="img-fluid" style={{height:'250px'}} src={props['image']} alt={props['bookName']}/>
          </Col>
          <Col xs={12} md={6}>
-         <AddComment bookId={props['bookId']}/>
+         <EditComment elementId={props.elementId} commentId={props.commentId} comment={props.comment} rate={props.rate}/>
          </Col>
-            </Row>
-        
-         
-         {/*  <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-             <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button> 
-          </Modal.Footer> */}
+            </Row> 
         </Modal>
       </>
     );
   }
 
-  export default ModalTemplate
+  export default PutModal
   
