@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.list-group{
+  font-size: x-small;
+}
+
+form{
+  font-size: medium;
+}
+#comment{
+  width: 100%;
+}
+ #rate{
+   padding: 1rem 1rem;
+   width: 80%;
+ }
+
+ #elementId{
+  padding: 1rem 1rem;
+  width: 100%;
+ }
+
+ .navbar{
+  background-color: black!important;
+}
+
+.nav-title{ 
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+  color: #FFFFFF;
+}
+
+.nav a{
+  color: #FFFFFF;   
+    text-shadow: #FFF 0px 0px 2px, #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FF2D95 0px 0px 10px, #FF2D95 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 200px, #FF2D95 0px 0px 30px;
+    color: #FFFFFF;
+}
+
+.nav a:hover{
+  text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77,0,38,0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77,25,0,0.5), 9px 0 18px #FFD500, 11px 0 18px #806A00, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #D4FF00, 14px 0 30px #6A8000, 15px 2px 30px rgba(64,77,0,0.5), 15px 0 45px #80FF00, 17px 0 45px #408000, 17px 2px 45px rgba(38,77,0,0.5), 2px 5px 2px rgba(194,76,206,0.01);
+  color: #A7DD3C;
+}
+
+.jumbo-title{
+
+  color: #FFFFFF;   
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    color: #FFFFFF;
+    
+}
+
+.jumbotron{
+    background-image: url('../src/assets/giphy.gif');
+     background-repeat: repeat;
+     color: white; 
+     min-height: 20vh;
+}
+
+.card{
+  background-image: url('../src/assets/giphy.gif');
+     background-repeat: repeat;
+  color: white;
+  transition: transform 300ms;
+}
+
+.card:hover{
+  transform: translateY(1px);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,61,228,0), 5px 5px 15px 5px rgba(255,61,228,0.29); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,61,228,0), 5px 5px 15px 5px rgba(255,61,228,0.29);
+}
+
+.btn-primary{
+ background-color: transparent!important;
+ border-color:violet;
+ color: white;
+}
+
+.list-group{
+  background-color: transparent;
+  background: transparent;
+  text-align: center;
+}
+
+.list-group-item{
+  background-color: transparent;
+  color: white;
+}
+
+label{
+  color: white;
+}
+
+.modal-content{
+  background-color: transparent;
+}
+
+.modal-title{
+  color: violet;
+}
+
+.close{
+  color: red;
+}
+
+#searchbtn:hover{
+  border-color: blue;
+  background-color: transparent;
+  color: blue;
+}
+
+#searchbtn{
+  border-color: violet;
+  background-color: transparent;
+  color: violet;
+}
