@@ -35,13 +35,15 @@ class EditComment extends Component{
                     }
                 })
 
-                if(response.ok){
+                console.log(response);
+
+                if( response.ok){
                     alert('yay edited')
                     this.setState({
-                        addComment:{
-                            comment:this.props.comment,
-                            rate:this.props.rate,
-                            elementId:this.props.commentId 
+                        editComment:{
+                            comment:'',
+                            rate:'',
+                            elementId:'' 
                         }
                     })
                     this.refresh()
@@ -66,7 +68,7 @@ render(){
     return (
         <>
         <h6>Add Comments</h6>
-        <Form className="mb-5 text-center " onSubmit={(e) => this.editComment(e)}>
+        <Form className="mb-5 text-center " onSubmit={(e) =>this.editComment(e)}>
                     <Form.Group>
                         <Form.Label>Comment</Form.Label>
                         <Form.Control
