@@ -13,7 +13,7 @@ class CommentArea extends Component{
     }
 
     fetchData = async ()=>{
-        const url = 'https://striveschool-api.herokuapp.com/api/comments/' + this.props['elementId']
+        const url = this.props['elementId']? ('https://striveschool-api.herokuapp.com/api/comments/' + this.props['elementId']):''
         const key= "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI4YTk5YzE2ZWY2MDAwMTVjZWQwNWUiLCJpYXQiOjE2MjI3MTQ3ODAsImV4cCI6MTYyMzkyNDM4MH0.-Wnp1TVPbpihQKGNhWBtiCGVL0J9wSxFlGgsbMfh4CA"
         console.log(this.props['elementId']);
        
@@ -86,8 +86,8 @@ class CommentArea extends Component{
         return (
             <>
             {
-            (this.state.commentArr.length === 0)
-                 ?<p onClick={this.refresh} style={{color:'white'}} className="text-center mt-3">Be First to Comment</p>
+            (!this.state.commentArr.length)
+                 ?<p style={{color:'white'}} className="text-center mt-3">Be First to Comment</p>
                  :this.state.commentArr.map((comment, i) =>
                  <>
 

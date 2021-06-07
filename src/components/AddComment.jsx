@@ -44,6 +44,7 @@ class AddComment extends Component{
                         elementId:'' 
                     }
                 })
+                this.refresh()
             }else{
                 alert('something is wrong')
             }

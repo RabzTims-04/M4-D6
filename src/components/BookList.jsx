@@ -9,7 +9,7 @@ import scifibooks from '../data/scifi.json'
 
 
 const BookList =(props)=>(
-    <Tabs className="justify-content-center" defaultActiveKey="fantasy" id="uncontrolled-tab-example">
+    <Tabs className="justify-content-center" defaultActiveKey="romance" id="uncontrolled-tab-example">
              
         <Tab eventKey="fantasy" title="fantasy">
                <FilterBooklist book={fantasybooks}/>
