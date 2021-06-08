@@ -1,12 +1,20 @@
 import { Modal, Button, Row, Col } from 'react-bootstrap'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddComment from './AddComment'
 
 const ModalTemplate = (props)=> {
     const [show, setShow] = useState(false);
-  
+    const [comment, setComment] = useState([])  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const updated =(data)=>{
+      setComment(data)
+    }
+    
+    useEffect(()=>{
+      props.updatedComments(comment)
+    },[comment])
   
     return (
       <>
@@ -24,7 +32,7 @@ const ModalTemplate = (props)=> {
            <img className="img-fluid" style={{height:'250px'}} src={props['image']} alt={props['bookName']}/>
          </Col>
          <Col xs={12} md={6}>
-         <AddComment bookId={props['bookId']}/>
+         <AddComment bookId={props['bookId']} updatedComments={updated}/>
          </Col>
             </Row>
         

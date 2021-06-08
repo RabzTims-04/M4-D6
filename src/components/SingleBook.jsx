@@ -14,8 +14,17 @@ class SingleBook extends Component{
         buttonselect:false,
         elementId:'', 
         image:"",
-        alt:''
+        alt:'',
+        comment:[]
     }
+
+    updated=(data)=>{
+        this.setState({
+            comment:data
+        })
+    }
+
+
 
     render(){
         return(
@@ -25,8 +34,8 @@ class SingleBook extends Component{
             <Row className="justify-content-center mt-3">
             <Col>
                 <div className="" id={this.state.selectId}>
-                   < ModalTemplate bookName={this.state.alt} image={this.state.image} bookId={this.state.selectId}/>
-                   <CommentArea elementId={this.state.selectId} bookName={this.state.alt} image={this.state.image}/>
+                   < ModalTemplate bookName={this.state.alt} image={this.state.image} bookId={this.state.selectId} updatedComments={this.updated}/>
+                   <CommentArea elementId={this.state.selectId} bookName={this.state.alt} image={this.state.image} updatedComments={this.state.comment}/>
                    
                 </div> 
                 </Col> 

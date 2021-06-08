@@ -36,7 +36,7 @@ class AddComment extends Component{
                 }
             })
             if(response.ok){
-                this.props.onNewComment(await response.json())
+               /*  this.props.updatedComments(await response.json()) */
                 alert('yay saved')
                 this.setState({
                     addComment:{
@@ -45,7 +45,15 @@ class AddComment extends Component{
                         elementId:'' 
                     }
                 })
-                this.refresh()
+              const newResponse = await fetch(url + this.props['bookId'],{
+                  headers:{
+                    'Authorization' : key
+                  }
+              })
+
+              const newData = await newResponse.json()
+              this.props.updatedComments(newData)
+
             }else{
                 alert('something is wrong')
             }

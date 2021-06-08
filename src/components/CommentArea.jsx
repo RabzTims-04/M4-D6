@@ -44,10 +44,13 @@ class CommentArea extends Component{
         console.log(prevProps);
 
         if(prevProps.elementId !== this.props.elementId){
-            this.fetchData()
+           
+                this.fetchData()
+            
         }  
 
     }
+
 
      deleteComment = async (id)=>{
          console.log(id);
@@ -87,6 +90,33 @@ class CommentArea extends Component{
             {
             (!this.state.commentArr.length)
                  ?<p style={{color:'white'}} className="text-center mt-3">Be First to Comment</p>
+                 :(this.props.updatedComments.length>0)?
+                 this.props.updatedComments.map((comment, i) =>
+                 <>
+
+                    <ListGroup
+                    /* onClick={this.refresh} */
+                     key={comment['_id']}>
+                       <ListGroup.Item >
+                         User Comments: {comment.comment}
+                       </ListGroup.Item>
+                       <ListGroup.Item >
+                       Rating: {comment.rate}
+                       </ListGroup.Item>
+                    </ListGroup>
+
+                    <PutModal elementId={comment['_id']} commentId={comment.elementId} comment={comment.comment} rate={comment.rate} bookName={this.props.bookName} image={this.props.image}/>
+                    
+                    <Button
+                    /* style={{position:'absolute', bottom:'10px', left:'19%', width:'140px'}} */
+                    variant="primary"
+                    id= {comment['_id']} 
+                     onClick ={(e)=> this.deleteComment(e.target.id) }>
+                    Delete</Button>
+                  
+                    <hr /> 
+                    </>
+                 )
                  :this.state.commentArr.map((comment, i) =>
                  <>
 
