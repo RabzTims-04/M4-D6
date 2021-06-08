@@ -21,9 +21,11 @@ class EditComment extends Component{
         })
     }
 
-    editComment = async (id) =>{
+    editComment = async (e) =>{
+        e.preventDefault()
         const url = 'https://striveschool-api.herokuapp.com/api/comments/' + this.props.elementId
         const key= "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI4YTk5YzE2ZWY2MDAwMTVjZWQwNWUiLCJpYXQiOjE2MjI3MTQ3ODAsImV4cCI6MTYyMzkyNDM4MH0.-Wnp1TVPbpihQKGNhWBtiCGVL0J9wSxFlGgsbMfh4CA"
+        console.log('id',this.props.elementId);
 
             try {
                 const response = await fetch (url,{
@@ -35,7 +37,7 @@ class EditComment extends Component{
                     }
                 })
 
-                console.log(response);
+                console.log('put',response);
 
                 if( response.ok){
                     alert('yay edited')
@@ -67,21 +69,22 @@ class EditComment extends Component{
 render(){
     return (
         <>
-        <h6>Add Comments</h6>
-        <Form className="mb-5 text-center " onSubmit={(e) =>this.editComment(e)}>
+        {/* <h6>Add Comments</h6> */}
+        <Form className="mb-5 " onSubmit={(e) =>this.editComment(e)}>
                     <Form.Group>
                         <Form.Label>Comment</Form.Label>
                         <Form.Control
                             required
                             as="textarea"
-                            rows={1}
+                            rows={4}
                             value={this.state.editComment.comment}
                             id="comment"
                             onChange={this.inputChange}
                         />
                     </Form.Group>
-                    <div className="d-flex">
-                    <Form.Group>
+                 
+            
+                  <Form.Group>
                         <Form.Label>Rating 1-5</Form.Label>
                         <Form.Control
                             required
@@ -92,7 +95,9 @@ render(){
                             onChange={e => this.inputChange(e)}
                         />
                     </Form.Group>
-                    <Form.Group style={{visibility:'hidden'}}>
+                
+              
+                   <Form.Group style={{visibility:'hidden'}}>
                         <Form.Label>ElementId</Form.Label>
                         <Form.Control
                             type="number"
@@ -102,7 +107,8 @@ render(){
                             onChange={e => this.inputChange(e)}
                         />
                     </Form.Group>
-                    </div>
+                 
+                    
                     
                     <Button variant="primary" type="submit">
                         Submit

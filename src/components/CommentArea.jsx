@@ -49,26 +49,6 @@ class CommentArea extends Component{
 
     }
 
- /*    editComment = async (id) =>{
-        const url = 'https://striveschool-api.herokuapp.com/api/comments/' + id
-        const key= "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI4YTk5YzE2ZWY2MDAwMTVjZWQwNWUiLCJpYXQiOjE2MjI3MTQ3ODAsImV4cCI6MTYyMzkyNDM4MH0.-Wnp1TVPbpihQKGNhWBtiCGVL0J9wSxFlGgsbMfh4CA"
-
-            try {
-                const response = await fetch (url,{
-                    method : 'PUT',
-                    headers :{
-                        'Authorization' : key  
-                    }
-                })
-                
-            } catch (error) {
-                console.log(error);
-            }
-
-    } */
-
-    
-
      deleteComment = async (id)=>{
          console.log(id);
 
@@ -120,21 +100,8 @@ class CommentArea extends Component{
                        Rating: {comment.rate}
                        </ListGroup.Item>
                     </ListGroup>
-                   {/*  <Button
-                    variant="primary"
-                    id= {comment['_id']} 
-                    onClick ={(e)=> this.editComment(e.target.id) }
-                    >
-                        edit
-                    </Button> */}
 
-                  {/*   <div id= {comment['_id']} 
-                    onClick ={(e)=> this.editComment(e.target.id) }>
-
-                        edit
-                    </div> */}
-
-                    <PutModal elementId={comment['_id']} commentId={comment.elementId} comment={comment.comment} rate={comment.rate}/>
+                    <PutModal elementId={comment['_id']} commentId={comment.elementId} comment={comment.comment} rate={comment.rate} bookName={this.props.bookName} image={this.props.image}/>
                     
                     <Button
                     /* style={{position:'absolute', bottom:'10px', left:'19%', width:'140px'}} */

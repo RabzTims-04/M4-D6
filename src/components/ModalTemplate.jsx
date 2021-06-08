@@ -10,7 +10,7 @@ const ModalTemplate = (props)=> {
   
     return (
       <>
-        <Button variant="primary" id="modalBtn" onClick={handleShow}>
+        <Button variant="primary" id="modalBtn" onClick={handleShow} className="mb-5">
           Add Comments
         </Button>
   

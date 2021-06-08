@@ -24,9 +24,9 @@ class SingleBook extends Component{
                     
             <Row className="justify-content-center mt-3">
             <Col>
-                <div className="text-center" id={this.state.selectId}>
+                <div className="" id={this.state.selectId}>
                    < ModalTemplate bookName={this.state.alt} image={this.state.image} bookId={this.state.selectId}/>
-                   <CommentArea elementId={this.state.selectId}/>
+                   <CommentArea elementId={this.state.selectId} bookName={this.state.alt} image={this.state.image}/>
                    
                 </div> 
                 </Col> 

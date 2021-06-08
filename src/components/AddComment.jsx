@@ -36,6 +36,7 @@ class AddComment extends Component{
                 }
             })
             if(response.ok){
+                this.props.onNewComment(await response.json())
                 alert('yay saved')
                 this.setState({
                     addComment:{

@@ -10,16 +10,16 @@ const PutModal = (props)=> {
   
     return (
       <>
-        <Button variant="primary" id="modalBtn" onClick={handleShow}>
-          Edit Comments
+        <Button variant="primary" id="editBtn" onClick={handleShow} className="mr-3">
+          Edit
         </Button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-              Edit Comment 
+            <Modal.Title>  {props.bookName}</Modal.Title>
           </Modal.Header>
        
-          <Row className="justify-content-center text-center mt-3">
+          <Row className="justify-content-center mt-3">
           <Col xs={12} md={6}>
              <img className="img-fluid" style={{height:'250px'}} src={props['image']} alt={props['bookName']}/>
          </Col>
